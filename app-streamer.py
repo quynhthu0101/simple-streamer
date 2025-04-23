@@ -22,10 +22,23 @@ with col1:
                           video_frame_callback=video_frame_callback,
 
                           rtc_configuration={  # Add this config
-                                "iceServers": [{"urls": ["stun:stun.l.google.com:19302"],
-                                                "username": "openrelayproject",
-                                                "credential": "openrelayproject"
-                                                }]
+                                "iceServers": [
+                                    {"urls": "stun:stun.12voip.com:3478"},
+                                    {"urls": "stun:stun.1und1.de:3478"},
+                                    {"urls": "stun:stun.3cx.com:3478"},
+                                    {"urls": "stun:stun.antisip.com:3478"},
+                                    {"urls": "stun:stun.ekiga.net:3478"},
+                                    {"urls": "stun:stun.freeswitch.org:3478"},
+                                    {"urls": "stun:stun.ippi.fr:3478"},
+                                    {"urls": "stun:stun.linphone.org:3478"},
+                                    {"urls": "stun:stun.sipnet.net:3478"},
+                                    {"urls": "stun:stun.voiparound.com:3478"},
+                                    {
+                                        "urls": "turn:openrelay.metered.ca:443",
+                                        "username": "openrelayproject",
+                                        "credential": "openrelayproject"
+                                    }
+                                ]
                             },
 
                           media_stream_constraints={"video": True, "audio": False}
