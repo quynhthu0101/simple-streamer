@@ -21,10 +21,8 @@ with col1:
     ctx = webrtc_streamer(key="example", 
                           video_frame_callback=video_frame_callback,
 
-                          rtc_configuration=
-                          {  # vao web https://www.metered.ca/stun-turn, vao dashboard overview, chon TURN server -> global -> add credential 
-                                iceServers: 
-                              [
+                          var myPeerConnection = new RTCPeerConnection({
+                              iceServers: [
                                   {
                                     urls: "stun:stun.relay.metered.ca:80",
                                   },
@@ -48,11 +46,9 @@ with col1:
                                     username: "23c878901a70d3424c5a535c",
                                     credential: "itC5WX5n319BH+BU",
                                   },
-                              ]
-                            },
-
-                          media_stream_constraints={"video": True, "audio": False}
-                          )
+                              ],
+                            });
+             
 
 
 imgout_place = col2.empty()
