@@ -21,24 +21,34 @@ with col1:
     ctx = webrtc_streamer(key="example", 
                           video_frame_callback=video_frame_callback,
 
-                          rtc_configuration={  # Add this config
-                                "iceServers": [
-                                    {"urls": "stun:stun.12voip.com:3478"},
-                                    {"urls": "stun:stun.1und1.de:3478"},
-                                    {"urls": "stun:stun.3cx.com:3478"},
-                                    {"urls": "stun:stun.antisip.com:3478"},
-                                    {"urls": "stun:stun.ekiga.net:3478"},
-                                    {"urls": "stun:stun.freeswitch.org:3478"},
-                                    {"urls": "stun:stun.ippi.fr:3478"},
-                                    {"urls": "stun:stun.linphone.org:3478"},
-                                    {"urls": "stun:stun.sipnet.net:3478"},
-                                    {"urls": "stun:stun.voiparound.com:3478"},
-                                    {
-                                        "urls": "turn:openrelay.metered.ca:443",
-                                        "username": "openrelayproject",
-                                        "credential": "openrelayproject"
-                                    }
-                                ]
+                          rtc_configuration=
+                          {  # vao web https://www.metered.ca/stun-turn, vao dashboard overview, chon TURN server -> global -> add credential 
+                                iceServers: 
+                              [
+                                  {
+                                    urls: "stun:stun.relay.metered.ca:80",
+                                  },
+                                  {
+                                    urls: "turn:global.relay.metered.ca:80",
+                                    username: "23c878901a70d3424c5a535c",
+                                    credential: "itC5WX5n319BH+BU",
+                                  },
+                                  {
+                                    urls: "turn:global.relay.metered.ca:80?transport=tcp",
+                                    username: "23c878901a70d3424c5a535c",
+                                    credential: "itC5WX5n319BH+BU",
+                                  },
+                                  {
+                                    urls: "turn:global.relay.metered.ca:443",
+                                    username: "23c878901a70d3424c5a535c",
+                                    credential: "itC5WX5n319BH+BU",
+                                  },
+                                  {
+                                    urls: "turns:global.relay.metered.ca:443?transport=tcp",
+                                    username: "23c878901a70d3424c5a535c",
+                                    credential: "itC5WX5n319BH+BU",
+                                  },
+                              ]
                             },
 
                           media_stream_constraints={"video": True, "audio": False}
